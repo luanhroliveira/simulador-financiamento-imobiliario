@@ -1,0 +1,104 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "simu-fin-imob-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/simu-fin-imob-app",
+      "sourceRoot": "projects/simu-fin-imob-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/simu-fin-imob-app",
+            "index": "projects/simu-fin-imob-app/src/index.html",
+            "main": "projects/simu-fin-imob-app/src/main.ts",
+            "polyfills": "projects/simu-fin-imob-app/src/polyfills.ts",
+            "tsConfig": "projects/simu-fin-imob-app/tsconfig.app.json",
+            "assets": [
+              "projects/simu-fin-imob-app/src/favicon.ico",
+              "projects/simu-fin-imob-app/src/assets"
+            ],
+            "styles": [
+              "projects/simu-fin-imob-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/simu-fin-imob-app/src/environments/environment.ts",
+                  "with": "projects/simu-fin-imob-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "simu-fin-imob-app:build:production"
+            },
+            "development": {
+              "browserTarget": "simu-fin-imob-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "simu-fin-imob-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/simu-fin-imob-app/src/test.ts",
+            "polyfills": "projects/simu-fin-imob-app/src/polyfills.ts",
+            "tsConfig": "projects/simu-fin-imob-app/tsconfig.spec.json",
+            "karmaConfig": "projects/simu-fin-imob-app/karma.conf.js",
+            "assets": [
+              "projects/simu-fin-imob-app/src/favicon.ico",
+              "projects/simu-fin-imob-app/src/assets"
+            ],
+            "styles": [
+              "projects/simu-fin-imob-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}
