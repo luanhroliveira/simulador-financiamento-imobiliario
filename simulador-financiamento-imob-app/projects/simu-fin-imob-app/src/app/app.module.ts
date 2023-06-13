@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandPageComponent } from './land-page/land-page.component';
+import { SacComponent } from './sac/sac.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     FooterComponent,
-    LandPageComponent
+    LandPageComponent,
+    SacComponent
   ],
   imports: [
     BrowserModule,
