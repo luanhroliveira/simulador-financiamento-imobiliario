@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandPageComponent implements OnInit {
 
-  imageURL: string = 'http://lorempixel.com.br/500/400';
+  imageURL: string = 'http://lorempixel.com.br/000/000';
   // imageURL: string = 'https://loremflickr.com/640/360';
 
   constructor() { }
