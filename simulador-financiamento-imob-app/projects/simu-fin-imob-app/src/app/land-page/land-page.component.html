@@ -1,0 +1,42 @@
+  <div
+    class="intro amber z-depth-1 my-logo-text"
+    [ngStyle]="this.getBackgroundImage()">
+
+  <h1 class="light-blue-text text-lighten-5">SimuCred</h1>
+  <h4 class="blue-text text-darken-1">Simule seu financiamento imobiliário!!!</h4>
+
+    <div id="sac-content" class="modal">
+      <div class="modal-content">
+        <app-sac></app-sac>
+      </div>
+      <div class="modal-footer">
+        <a routerLink="/tabFinanciamento" class="modal-close waves-effect waves-green btn-flat">Calcular financiamento</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+      </div>
+    </div>
+
+    <div id="painel-inicial" class="row">
+      <div class="col s12 m6 offset-m3">
+
+
+        <a (click)="openModal()">
+          <div
+            id="botao-sac"
+            class="card-panel red accent-4 center my-card-button"
+          >
+            <span class="white-text flow-text"> SAC </span>
+          </div>
+        </a>
+<!--        <a routerLink="login">-->
+<!--          <div-->
+<!--            id="botao-price"-->
+<!--            class="card-panel red accent-4 center my-card-button"-->
+<!--          >-->
+<!--            <span class="white-text flow-text"> PRICE </span>-->
+<!--          </div>-->
+<!--        </a>-->
+
+      </div>
+    </div>
+
+</div>
