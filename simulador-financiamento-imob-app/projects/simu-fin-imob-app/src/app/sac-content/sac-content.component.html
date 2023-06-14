@@ -1,0 +1,37 @@
+<div class="row center">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1 center-align">
+      <div class="card-content white-text center-align">
+        <span class="card-title">Simulador tabela SAC</span>
+
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              placeholder="R$"
+              id="valor_financiado"
+              type="number"
+              class="validate"
+              [(ngModel)]="formSacData.valor_financiado" >
+            <label for="valor_financiado">valor do financiamento</label>
+          </div>
+          <div class="input-field col s6">
+            <input
+              id="meses"
+              type="number"
+              class="validate"
+              [(ngModel)]="formSacData.meses">
+            <label for="meses">Meses</label>
+          </div>
+          <div class="input-field col s6">
+            <input
+              placeholder="%"
+              id="taxa_juros"
+              type="number"
+              [(ngModel)]="formSacData.taxaJurosAnual">
+            <label for="taxa_juros">Juros %</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SacComponent } from './sac.component';
+import { SacContentComponent } from './sac-content.component';
 
 describe('SacComponent', () => {
-  let component: SacComponent;
-  let fixture: ComponentFixture<SacComponent>;
+  let component: SacContentComponent;
+  let fixture: ComponentFixture<SacContentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SacComponent ]
+      declarations: [ SacContentComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SacComponent);
+    fixture = TestBed.createComponent(SacContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
