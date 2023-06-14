@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tabela-financiamento',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabelaFinanciamentoComponent implements OnInit {
 
-  constructor() { }
+  objetoRecebido: any;
+
+  constructor(private router: Router) {
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation && navigation.extras && navigation.extras.state) {
+      this.objetoRecebido = navigation.extras.state.valueOf();
+    }
+  }
 
   ngOnInit(): void {
   }

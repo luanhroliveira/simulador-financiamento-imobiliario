@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 declare const M: any;
 
@@ -13,12 +14,26 @@ export class LandPageComponent implements OnInit {
   // imageURL: string = 'https://loremflickr.com/640/360';
   isHidePanel = true;
 
-  constructor() { }
+  dadosSacRecebido: any;
+
+  constructor(private router: Router) { }
 
   openModal(): void {
     const modal = document.querySelector('#sac-content');
     M.Modal.init(modal);
     M.Modal.getInstance(modal).open();
+  }
+
+  receberDadosSac( obj: any){
+      this.dadosSacRecebido = obj;
+  }
+
+  enviarDadosSac() {
+    const objeto = this.dadosSacRecebido;
+    this.router.navigate(
+      ['/tabFinanciamento'],
+      { state: { objeto } }
+    );
   }
 
   ngOnInit(): void {
