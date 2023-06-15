@@ -1,7 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-
-declare const M: any;
+import {AfterViewInit, Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-sac',
@@ -9,8 +6,10 @@ declare const M: any;
   styleUrls: ['./sac-content.component.css']
 })
 
+export class SacContentComponent implements AfterViewInit {
 
-export class SacContentComponent implements OnInit {
+  @Output() formSacDataSend = new EventEmitter<any>();
+
   formSacData: {
     meses: number;
     taxaJurosAnual: number;
@@ -25,7 +24,7 @@ export class SacContentComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-
+  ngAfterViewInit() {
+    this.formSacDataSend.emit(this.formSacData);
   }
 }

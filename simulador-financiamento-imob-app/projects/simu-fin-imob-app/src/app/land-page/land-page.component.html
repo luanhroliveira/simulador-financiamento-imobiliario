@@ -7,10 +7,10 @@
 
     <div id="sac-content" class="modal">
       <div class="modal-content">
-        <app-sac></app-sac>
+        <app-sac (formSacDataSend)="receberDadosSac($event)"></app-sac>
       </div>
       <div class="modal-footer">
-        <a routerLink="/tabFinanciamento" class="modal-close waves-effect waves-green btn-flat">Calcular financiamento</a>
+        <a (click)="enviarDadosSac()" class="modal-close waves-effect waves-green btn-flat">Calcular financiamento</a>
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
       </div>
     </div>
