@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 declare const M: any;
@@ -12,24 +12,27 @@ export class LandPageComponent implements OnInit {
 
   imageURL: string = 'http://lorempixel.com.br/000/000';
   // imageURL: string = 'https://loremflickr.com/640/360';
-  isHidePanel = true;
 
   dadosSacRecebido: any;
+  formIsInvalid: boolean | undefined;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   openModal(): void {
+    this.formIsInvalid = true;
     const modal = document.querySelector('#sac-content');
     M.Modal.init(modal);
     M.Modal.getInstance(modal).open();
   }
 
-  receberDadosSac( obj: any){
-      this.dadosSacRecebido = obj;
+  receberDadosSac(obj: any) {
+    this.dadosSacRecebido = obj;
   }
 
   enviarDadosSac() {
-    const objeto = this.dadosSacRecebido;
+    const objeto = this.dadosSacRecebido.value;
+    const sac = ""
     this.router.navigate(
       ['/tabFinanciamento'],
       { state: { objeto } }
@@ -46,5 +49,9 @@ export class LandPageComponent implements OnInit {
         this.imageURL +
         ')',
     };
+  }
+
+  recebeValidacaoForm(obj: any) {
+    this.formIsInvalid = obj;
   }
 }
