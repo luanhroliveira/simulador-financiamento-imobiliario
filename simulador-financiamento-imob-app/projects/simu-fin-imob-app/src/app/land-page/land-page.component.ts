@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {ParametrosCalculoFinanciamento} from "../tabela-financiamento/dto/ParametrosCalculoFinanciamento";
 
 declare const M: any;
 
@@ -13,7 +14,7 @@ export class LandPageComponent implements OnInit {
   imageURL: string = 'http://lorempixel.com.br/000/000';
   // imageURL: string = 'https://loremflickr.com/640/360';
 
-  dadosSacRecebido: any;
+  dadosSacRecebido: ParametrosCalculoFinanciamento | undefined;
   formIsInvalid: boolean | undefined;
 
   constructor(private router: Router) {
@@ -26,12 +27,12 @@ export class LandPageComponent implements OnInit {
     M.Modal.getInstance(modal).open();
   }
 
-  receberDadosSac(obj: any) {
+  receberDadosSac(obj: ParametrosCalculoFinanciamento) {
     this.dadosSacRecebido = obj;
   }
 
   enviarDadosSac() {
-    const objeto = this.dadosSacRecebido.value;
+    const objeto = this.dadosSacRecebido;
     const sac = ""
     this.router.navigate(
       ['/tabFinanciamento'],
