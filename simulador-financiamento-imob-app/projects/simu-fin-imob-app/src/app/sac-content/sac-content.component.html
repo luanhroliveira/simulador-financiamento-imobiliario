@@ -4,33 +4,51 @@
       <div class="card-content white-text center-align">
         <span class="card-title">Simulador tabela SAC</span>
 
-        <div class="row">
-          <div class="input-field col s6">
-            <input
-              placeholder="R$"
-              id="valor_financiado"
-              type="number"
-              class="validate"
-              [(ngModel)]="formSacData.valor_financiado" >
-            <label for="valor_financiado">valor do financiamento</label>
+        <form [formGroup]="formSacData">
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                placeholder="R$"
+                id="valor_financiado"
+                type="text"
+                formControlName="valor_financiado"
+                (change)="validateCampoValorFinanciado()">
+              <div
+                [hidden]="!formSacData.get('valor_financiado')?.invalid && formSacData.get('valor_financiado')?.touched">
+                <div [hidden]="!formSacData.get('valor_financiado')?.hasError('required')">Campo obrigatório.</div>
+                <div [hidden]="!formSacData.get('valor_financiado')?.hasError('pattern')">Valor informado inválido.
+                </div>
+              </div>
+              <label for="valor_financiado">valor do financiamento</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                id="meses"
+                type="number"
+                class="validate"
+                formControlName="meses"
+                (change)="validateCampoMeses()">
+              <div [hidden]="!formSacData.get('meses')?.invalid && formSacData.get('meses')?.touched">
+                <div [hidden]="!formSacData.get('meses')?.hasError('required')">Campo obrigatório.</div>
+                <div [hidden]="!formSacData.get('meses')?.hasError('pattern')">Valor informado inválido.</div>
+              </div>
+              <label for="meses">Meses</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                id="taxa_juros"
+                type="text"
+                formControlName="taxa_juros"
+                (change)="validateCampoTxJuros()">
+              <div [hidden]="!formSacData.get('taxa_juros')?.invalid && formSacData.get('taxa_juros')?.touched">
+                <div [hidden]="!formSacData.get('taxa_juros')?.hasError('required')">Campo obrigatório.</div>
+                <div [hidden]="!formSacData.get('taxa_juros')?.hasError('pattern')">Valor informado inválido.</div>
+              </div>
+              <label for="taxa_juros">Juros %</label>
+            </div>
           </div>
-          <div class="input-field col s6">
-            <input
-              id="meses"
-              type="number"
-              class="validate"
-              [(ngModel)]="formSacData.meses">
-            <label for="meses">Meses</label>
-          </div>
-          <div class="input-field col s6">
-            <input
-              placeholder="%"
-              id="taxa_juros"
-              type="number"
-              [(ngModel)]="formSacData.taxaJurosAnual">
-            <label for="taxa_juros">Juros %</label>
-          </div>
-        </div>
+          <button type="button" (click)="validForm()">Validar dados</button>
+        </form>
       </div>
     </div>
   </div>
