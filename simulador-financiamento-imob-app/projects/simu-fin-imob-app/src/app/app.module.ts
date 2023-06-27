@@ -9,6 +9,7 @@ import {LandPageComponent} from './land-page/land-page.component';
 import {SacContentComponent} from './sac-content/sac-content.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TabelaFinanciamentoComponent} from './tabela-financiamento/tabela-financiamento.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {TabelaFinanciamentoComponent} from './tabela-financiamento/tabela-financ
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
