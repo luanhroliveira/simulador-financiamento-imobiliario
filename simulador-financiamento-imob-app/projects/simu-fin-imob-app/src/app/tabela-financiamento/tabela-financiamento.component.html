@@ -1,1 +1,17 @@
-<div>{{ objetoRecebido | json }}</div>
+<div class="table-container" *ngIf="parcelas.length > 0">
+
+  <div class="header-row">
+    <div class="header-cell">Mês</div>
+    <div class="header-cell">Amortização</div>
+    <div class="header-cell">Juros</div>
+    <div class="header-cell">Valor da prestação</div>
+  </div>
+
+  <div class="data-row" *ngFor="let parcela of parcelas">
+    <div class="data-cell">{{ parcela.mes }}</div>
+    <div class="data-cell">{{ parcela.amortizacao | currency:"BRL" }}</div>
+    <div class="data-cell">{{ parcela.juros | currency:"BRL"}}</div>
+    <div class="data-cell">{{ parcela.prestacao | currency:"BRL"}}</div>
+  </div>
+</div>
+

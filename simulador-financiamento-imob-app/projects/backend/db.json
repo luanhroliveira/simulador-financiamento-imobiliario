@@ -1,12 +1,10 @@
 {
   "dadosCalcFinanc": [
     {
-      "objeto": {
-        "_tabela": "SAC",
-        "_valor_financiado": "120000",
-        "_tx_juros": "12.5",
-        "_meses": 123
-      },
+      "tabela": "SAC",
+      "valor_financiado": 120000,
+      "tx_juros": "12.5",
+      "meses": 120,
       "id": 1
     }
   ]
