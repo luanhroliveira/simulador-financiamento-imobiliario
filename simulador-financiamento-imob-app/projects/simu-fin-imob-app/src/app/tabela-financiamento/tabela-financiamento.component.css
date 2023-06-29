@@ -1,0 +1,17 @@
+.table-container {
+  overflow-y: scroll;
+  height: calc(100vh - 50px);
+}
+
+.header-row {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+.header-cell,
+.data-cell {
+  display: inline-block;
+  width: 25%;
+}

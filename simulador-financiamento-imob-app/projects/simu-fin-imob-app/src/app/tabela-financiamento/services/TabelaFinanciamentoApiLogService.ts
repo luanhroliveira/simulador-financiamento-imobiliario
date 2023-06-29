@@ -6,7 +6,7 @@ import {ParametrosCalculoFinanciamento} from "../dto/ParametrosCalculoFinanciame
 @Injectable({
   providedIn: 'root'
 })
-export class TabelaFinanciamentoService {
+export class TabelaFinanciamentoApiLogService {
 
   private url = 'http://localhost:3001/dadosCalcFinanc';
 
