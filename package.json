@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href=/simulador-financiamento-imobiliario/",
+    "build": "ng build --base-href=/simulador-financiamento-imobiliario/",
     "ghpages": "angular-cli-ghpages --dir=dist/simulador-financiamento-imobiliario",
     "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "angular-cli-ghpages": "^1.0.6",
     "material-icons": "^1.13.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
