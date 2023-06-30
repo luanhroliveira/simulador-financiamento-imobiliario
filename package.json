@@ -1,10 +1,12 @@
 {
-  "name": "simulador-financiamento-imob-app",
+  "name": "simulador-financiamento-imobiliario",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href=/simulador-financiamento-imobiliario/",
+    "ghpages": "angular-cli-ghpages --dir=dist/simulador-financiamento-imobiliario",
+    "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -19,7 +21,6 @@
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
     "material-icons": "^1.13.8",
-    "materialize-css": "^1.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -36,6 +37,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "materialize-css": "^1.0.0",
     "typescript": "~4.7.2"
   }
 }
