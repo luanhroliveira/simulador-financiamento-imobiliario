@@ -25,15 +25,13 @@ export class TabelaFinanciamentoComponent implements OnInit {
   constructor(private router: Router, private tabFinancService: TabelaFinanciamentoApiLogService, private calcFinanService: CalculoFinanciamentoService) {
     const navigation = this.router.getCurrentNavigation();
     if (navigation && navigation.extras && navigation.extras.state) {
-      console.log('Valor recebido:', navigation.extras.state);
+
       this.objetoRecebido = {
         tabela: navigation.extras.state['objeto'].tabela,
         valor_financiado: Number(navigation.extras.state['objeto'].valor_financiado),
         tx_juros: navigation.extras.state['objeto'].tx_juros,
         meses: navigation.extras.state['objeto'].meses
       };
-
-      console.log('Objeto recebido:', this.objetoRecebido);
 
       localStorage.setItem('paramCalcFinc', JSON.stringify(this.objetoRecebido));
 
