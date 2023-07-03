@@ -8,6 +8,10 @@ O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado 
 
 https://luanhroliveira.github.io/simulador-financiamento-imobiliario/
 
+## Link apresentação do projeto
+
+https://youtu.be/dEoyB0ZbEHA
+
 ## Checklist
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
